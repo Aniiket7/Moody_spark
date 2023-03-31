@@ -95,7 +95,7 @@ export default function Login() {
                         p={8}>
                         <Stack spacing={4}>
                             <FormControl id="mobile">
-                                <FormLabel>mobile address</FormLabel>
+                                <FormLabel>mobile number</FormLabel>
                                 <Input type="number" onChange={(e) => { setmobile(e.target.value) }} />
                             </FormControl>
                             <FormControl id="password">
