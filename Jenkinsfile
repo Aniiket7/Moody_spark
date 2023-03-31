@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                //docker build . -t mo
+                sh 'docker build . -t mo'
             }
         }
         stage('Test') {
@@ -16,7 +16,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-                docker run -d -p 5000:5000 -p 3000:3000 mo
+                sh 'docker run -d -p 5000:5000 -p 3000:3000 mo'
             }
         }
     }
