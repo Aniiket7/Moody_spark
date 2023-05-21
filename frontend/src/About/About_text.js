@@ -95,7 +95,7 @@ const About_text = () => {
                                 color: "gray.400",
                             }}
                         >
-                            Establishment in 2018, Moody Spark is among one of the trustworthy business organizations thoroughly engages in the realm of trading, manufacturing, and exporting a broad collection of Garments which includes Men's Lycra Shorts, Men's Cotton Shorts, Men's Hoodies, Men's Sweatshirts, Lycra Mens Track Pants, Men's Lycra Lower, Men's Full Sleeve T-Shirts, Mens Plain T-Shirts, Mens Lycra T-Shirts, and Mens Polo T-Shirts, etc.
+                            Establishment in 2023, Moody Spark is among one of the trustworthy business organizations thoroughly engages in the realm of trading, manufacturing, and exporting a broad collection of Garments which includes Men's Lycra Shorts, Men's Cotton Shorts, Men's Hoodies, Men's Sweatshirts, Lycra Mens Track Pants, Men's Lycra Lower, Men's Full Sleeve T-Shirts, Mens Plain T-Shirts, Mens Lycra T-Shirts, and Mens Polo T-Shirts, etc.
 
 
                         </chakra.p>
