@@ -1,11 +1,36 @@
-node {
-  stage('SCM') {
-    checkout scm
-  }
-  stage('SonarQube Analysis') {
-    def scannerHome = tool 'SonarScanner';
-    withSonarQubeEnv() {
-      sh "${scannerHome}/bin/sonar-scanner"
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+            	script{
+                echo 'Building..'
+                sh 'docker build -t mo .'
+                }
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+         stage('SonarQube') {
+            steps {
+                sh 'sonar-scanner \
+  -Dsonar.projectKey=Moddyspark \
+  -Dsonar.sources=. \
+  -Dsonar.host.url=http://107.21.77.91:9000 \
+  -Dsonar.token=sqp_2fdd5388c70e807cfa7ad37643db9add0047703e'
+            }
+        }
+        stage('Deploy') {
+            steps {
+            	script{
+                echo 'Deploying....'
+                sh 'docker run -d -p 5000:5000 -p 3000:3000 mo'
+                }
+            }
+        }
     }
-  }
 }
