@@ -15,15 +15,14 @@ pipeline {
                 echo 'Testing...'
             }
         }
-         stage('SonarQube') {
-            steps {
-                sh 'sonar-scanner \
-  -Dsonar.projectKey=Moddyspark \
-  -Dsonar.sources=. \
-  -Dsonar.host.url=http://107.21.77.91:9000 \
-  -Dsonar.token=sqp_2fdd5388c70e807cfa7ad37643db9add0047703e'
-            }
-        }
+      stage('SonarQube Analysis') {
+  //  def scannerHome = tool 'SonarScanner';
+  steps {
+    withSonarQubeEnv() {
+      sh "${scannerHome}/bin/sonar-scanner"
+    }
+  }
+ }
         stage('Deploy') {
             steps {
             	script{
