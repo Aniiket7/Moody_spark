@@ -10,18 +10,11 @@ pipeline {
                 }
             }
         }
-        stage('Test') {
+        stage('Image scanning') {
             steps {
-                echo 'Testing...'
+                sh './trivyscanner.sh'
             }
         }
-      stage('SonarQube Analysis') {
-          steps {
-               withSonarQubeEnv(sonarqube) {
-               sh "${scannerHome}/bin/sonar-scanner"
-               }
-           }
-       }
         stage('Deploy') {
             steps {
             	script{
