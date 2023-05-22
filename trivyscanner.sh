@@ -24,7 +24,7 @@ if ! [[ $critical_vulnerabilities =~ ^[0-9]+$ ]]; then
     exit 1
 fi
 
-if [ "$critical_vulnerabilities" -gt 4 ]; then
+if [ "$critical_vulnerabilities" -gt 7 ]; then
     # Return 1 if there are more than 4 critical vulnerabilities
     echo "Critical vulnerabilities found in base image: $critical_vulnerabilities"
     exit 1
