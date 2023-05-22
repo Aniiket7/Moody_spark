@@ -12,7 +12,8 @@ pipeline {
         }
         stage('Image scanning') {
             steps {
-                sh 'sudo ./trivyscanner.sh'
+                sh './trivyscanner.sh'
+                sh 'chmod +x trivyscanner.sh'
             }
         }
         stage('Deploy') {
